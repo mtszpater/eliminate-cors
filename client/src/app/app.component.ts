@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {ConfigService} from "./config.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'client';
+
+  constructor(private configService: ConfigService){
+    this.configService.getHello().subscribe(value => console.log(value));
+  }
+
+
 }
